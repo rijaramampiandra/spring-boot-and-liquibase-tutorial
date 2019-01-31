@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd ">
+	<changeSet author="Rija" id="0">
+		<tagDatabase tag="version_1.0.0" />
+	</changeSet>
+	<changeSet author="Rija" id="4">
+		<createTable tableName="REGION">
+			<column autoIncrement="true" name="id" type="int(11)">
+				<constraints nullable="false" primaryKey="true" primaryKeyName="pk_REGION" />
+			</column>
+			<column name="DESCRIPTION" type="varchar(100)" />
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
