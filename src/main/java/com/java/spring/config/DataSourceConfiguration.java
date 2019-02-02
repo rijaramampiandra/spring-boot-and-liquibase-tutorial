@@ -9,6 +9,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * DB Access.
+ * 
+ * @author Rija RAMAMPIANDRA.
+ *
+ */
 @Configuration
 @EnableJpaRepositories("com.java.spring.repository")
 public class DataSourceConfiguration {

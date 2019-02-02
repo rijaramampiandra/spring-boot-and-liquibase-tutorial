@@ -5,7 +5,7 @@
 	<changeSet author="Rija" id="0">
 		<tagDatabase tag="version_1.0.0" />
 	</changeSet>
-	<changeSet author="Rija" id="4">
+	<changeSet author="Rija" id="1">
 		<createTable tableName="REGION">
 			<column autoIncrement="true" name="id" type="int(11)">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="pk_REGION" />

@@ -5,6 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * Application configuration.
+ * 
+ * @author Rija RAMAMPIANDRA.
+ *
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.java.spring" })
 @PropertySource(value = { "classpath:default-config/application-default.properties" }, ignoreResourceNotFound = true)
