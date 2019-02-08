@@ -1,7 +1,9 @@
 package com.java.spring.service.implementation;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,5 +36,15 @@ public class RegionServiceImpl implements RegionService {
 	@Override
 	public Iterable<Region> findAll() {
 		return regionRepository.findAll();
+	}
+
+	@Override
+	public Region findFirstRegionFound(String description) {
+		final List<Region> list = regionRepository.findByDescription(description);
+		if (list != null && !list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+
 	}
 }

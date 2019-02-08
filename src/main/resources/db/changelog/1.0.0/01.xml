@@ -14,13 +14,4 @@
 			<column name="create_date" type="datetime" />
 		</createTable>
 	</changeSet>
-	<!-- BEGIN : Only for test. -->
-	<changeSet author="Rija" id="2" context="test">
-		<insert tableName="REGION">
-			<column name="id" value="1" />
-			<column name="description" value="AntananarivoTEST" />
-			<column name="create_date" value="2019-01-21 14:56:56.017" />
-		</insert>
-	</changeSet>
-	<!-- END : Only for test. -->
 </databaseChangeLog>

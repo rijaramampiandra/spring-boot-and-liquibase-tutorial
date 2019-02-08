@@ -27,4 +27,6 @@ public interface RegionService {
 	 */
 	Iterable<Region> findAll();
 
+	Region findFirstRegionFound(String description);
+
 }
