@@ -16,23 +16,12 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss z</maven.build.timestamp.format>
-
-		<jackson-databind.version>2.9.3</jackson-databind.version>
-		<model.mapper.version>0.7.4</model.mapper.version>
-		<com.microsoft.sqlserver.version>6.0.8112</com.microsoft.sqlserver.version>
-
 		<swagger.version>2.7.0</swagger.version>
-
-		<velocity.version>1.7</velocity.version>
-
-		<!-- Unit test -->
 		<com.h2database.version>1.4.194</com.h2database.version>
 		<org.mockito.mockito-core.version>2.15.0</org.mockito.mockito-core.version>
 		<junit.version>4.12</junit.version>
-		<fr.verisure.ddo.foundation.version>2.0.12</fr.verisure.ddo.foundation.version>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 	</properties>
 	<dependencies>
@@ -81,11 +70,11 @@
 			<artifactId>liquibase-core</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
@@ -100,7 +89,32 @@
 			<version>${swagger.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- Begin : Unit testing -->
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Batch unit test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -108,21 +122,17 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-test</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- End : Unit testing -->
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<!-- <scope>test</scope> -->
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

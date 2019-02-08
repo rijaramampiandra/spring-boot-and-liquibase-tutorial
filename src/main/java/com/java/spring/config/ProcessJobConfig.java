@@ -18,7 +18,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.java.spring.service.tasklet.StepOneTasklet;
+import com.java.spring.service.RegionService;
+import com.java.spring.service.tasklet.RegionTasklet;
 
 /**
  * Job process config.
@@ -38,6 +39,9 @@ public class ProcessJobConfig extends DefaultBatchConfigurer {
 	@Autowired
 	private StepBuilderFactory stepBuilders;
 
+	@Autowired
+	private RegionService regionService;
+
 	@Autowired(required = false)
 	@Qualifier("datasource")
 	public void setDataSource(DataSource dataSource) {
@@ -56,8 +60,8 @@ public class ProcessJobConfig extends DefaultBatchConfigurer {
 	}
 
 	@Bean
-	public StepOneTasklet stepOneTasklet() {
-		return new StepOneTasklet();
+	public RegionTasklet stepOneTasklet() {
+		return new RegionTasklet(regionService);
 	}
 
 	@Bean("stepOne")
